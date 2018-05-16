@@ -1,6 +1,6 @@
 class Main {
   constructor() {
-    Logger.log('hello');
+    Logger.log('hedddllo');
   }
 }
 
