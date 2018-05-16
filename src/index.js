@@ -1,9 +1,9 @@
 class Main {
   constructor() {
-    console.log('hello');
+    Logger.log('hello');
   }
 }
 
-function main() {
+global.main =  () => {
   new Main();
-}
+};
