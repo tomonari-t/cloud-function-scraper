@@ -1,6 +1,9 @@
+import client from 'cheerio-httpcli';
 class Main {
   constructor() {
-    Logger.log('hedddllo');
+    client.fetch('https://www.google.com/').then(({response}) => {
+      console.log(response);
+    })
   }
 }
 
