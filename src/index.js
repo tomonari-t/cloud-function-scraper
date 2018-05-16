@@ -1,9 +1,10 @@
 import 'babel-polyfill';
-import osmosis from 'osmosis';
+import dotenv from 'dotenv';
+import runner from './runner';
+dotenv.config();
 
-
-
-exports.main = (req, res) => {
-  new Main().run();
+runner();
+exports.main = async (req, res) => {
+  await runner();
   res.sendStatus(200);
 };

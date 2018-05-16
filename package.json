@@ -6,6 +6,7 @@
   "scripts": {
     "build": "babel src -d functions",
     "deploy:local:main": "functions-emulator deploy main  --trigger-http",
+    "call:local:main": "functions-emulator call main",
     "logs": "functions-emulator logs read"
   },
   "devDependencies": {
@@ -18,6 +19,7 @@
     "babel-preset-stage-3": "^6.24.1"
   },
   "dependencies": {
+    "cheerio-httpcli": "^0.7.3",
     "osmosis": "^1.1.6"
   }
 }
