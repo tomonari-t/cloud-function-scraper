@@ -1,12 +1,21 @@
-import client from 'cheerio-httpcli';
+const osmosis = require('osmosis');
 class Main {
-  constructor() {
-    client.fetch('https://www.google.com/').then(({response}) => {
-      console.log(response);
+  run = async () => {
+    const data = await this.get();
+    console.log(data);
+  }
+
+  get = () => {
+    return new Promise((resolve) => {
+      osmosis.get('https://www.google.com/')
+      .set({ title: 'title' })
+      .data((d) => {
+        resolve(d);
+      });
     })
   }
 }
 
-global.main =  () => {
-  new Main();
-};
+(async () => {
+  await new Main().run();
+})()
