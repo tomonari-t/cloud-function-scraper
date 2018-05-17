@@ -1,9 +1,10 @@
-class Main {
-  constructor() {
-    console.log('hello');
-  }
-}
+import 'babel-polyfill';
+import dotenv from 'dotenv';
+import runner from './runner';
+dotenv.config();
 
-function main() {
-  new Main();
-}
+runner();
+exports.main = async (req, res) => {
+  await runner();
+  res.sendStatus(200);
+};
